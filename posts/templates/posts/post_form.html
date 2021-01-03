@@ -1,0 +1,9 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+<h1>Create New Post</h1>
+<form action="{% url 'new' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Post">
+</form>
+{% endblock %}
